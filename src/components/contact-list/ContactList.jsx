@@ -1,10 +1,11 @@
 import { ContactElem } from 'components/contact-elem/ContactElem';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ContactListStyle } from './ContactList.style';
 
 export const ContactList = ({ contacts, onDeleteContacts }) => {
   return (
-    <ul>
+    <ContactListStyle>
       {contacts.map(({ id, name, number }) => (
         <ContactElem
           key={id}
@@ -14,7 +15,7 @@ export const ContactList = ({ contacts, onDeleteContacts }) => {
           DeleteContact={onDeleteContacts}
         ></ContactElem>
       ))}
-    </ul>
+    </ContactListStyle>
   );
 };
 
